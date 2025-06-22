@@ -1,0 +1,88 @@
+:root {
+  /* Light Mode */
+  --text-color-light: hsl(200, 15%, 8%);
+  --input-color-light: hsl(0, 0%, 52%);
+  --bg-color-light: hsl(0, 0%, 98%);
+  --element-color-light: hsl(0, 0%, 100%);
+
+  /* Dark Mode */
+  --text-color-dark: hsl(0, 0%, 100%);
+  --bg-color-dark: hsl(207, 26%, 17%);
+  --element-color-dark: hsl(209, 23%, 22%);
+}
+
+body {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+header {
+  height: 80px;
+  background-color: var(--element-color-dark); 
+  display: flex;
+  justify-content: space-around;
+}
+
+.mode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-weight: lighter;
+}
+
+.mode-btn {
+  all: unset;
+}
+.search-input {
+  all: unset;
+  background-color: var(--element-color-dark);
+  height: 40px;
+  width: 300px;
+  margin: 40px;
+}
+.main-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  padding: 20px;
+  
+  
+}
+
+.card-container {
+  background-color: var(--element-color-dark); 
+  padding: 16px;
+  border-radius: 8px;
+  color: var(--text-color-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 35px;
+}
+
+.card-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.search-input {
+  grid-column: 1 / -1; 
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  margin-left: 60px;
+}
+.filter-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#selectCountry{
+  appearance: none; 
+  border: none;   
+  padding:10px;
+  border: none;
+  margin: 20px;
+}
+
+
