@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 
+
 function Main({ data }) {
   const [searchText, setSearchText] = useState("");
   const [selectedData, setSelectedData] = useState(data);
+
 
   useEffect(() => {
     const filtered = data.filter((country) =>
@@ -12,11 +14,13 @@ function Main({ data }) {
     setSelectedData(filtered);
   }, [searchText, data]);
 
+
   function filterData() {
     const newRegion = new Set(data.map((curr) => curr.region));
     return Array.from(newRegion);
   }
   const regionData = filterData();
+
 
   const optionEle = regionData.map((region) => (
     <option key={region} value={region}>
@@ -28,7 +32,6 @@ function Main({ data }) {
     let currData = event.target.value;
 
     let filterData = data.filter((filerdata) => filerdata.region === currData);
-    // console.log(filterData)
     setSelectedData(filterData);
   }
 
@@ -45,18 +48,22 @@ function Main({ data }) {
           onChange={(e) => setSearchText(e.target.value)}
         />
 
-      <div>
-      <label htmlFor="selectCountry">Filter By Region</label>
-        <select id="selectCountry" name="region" onChange={handleRegionChange}>
-          
-          {optionEle}
-        </select>
-      </div>
+        <div>
+          <label htmlFor="selectCountry">Filter By Region</label>
+          <select
+            id="selectCountry"
+            name="region"
+            onChange={handleRegionChange}
+          >
+            {optionEle}
+          </select>
+        </div>
       </div>
 
       <div className="main-card-container">
         {selectedData.map((country, index) => (
           <Card
+            countryData={country}
             key={index}
             name={country.name.common}
             src={country.flags.png}

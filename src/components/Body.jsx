@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
 import Main from "./Main";
 
 function Body() {
